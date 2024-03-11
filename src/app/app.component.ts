@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'dbudgeteer';
+  title: string = 'dbudgeteer';
+  showExpense: boolean = true;
+  check: string = '';
+
+  onClick() {
+    this.showExpense = false;
+    console.log('showExpense changed to True');
+    console.log(this.showExpense);
+  }
+
+  show(event: any) {
+    console.log(event);
+    this.check = event.target.value;
+  }
 }

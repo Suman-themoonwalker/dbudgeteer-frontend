@@ -1,9 +1,18 @@
-<html>
+<p>{{ title }}</p>
+<input type="text" (input)="show($event)" />
+<p>{{ check }}</p>
+<body>
   <div class="header"><h1>DBudgeteer</h1></div>
   <div class="content">
-    <div class="menu"><h2>Menu</h2></div>
-    <div class="aside"><h2>Aside</h2></div>
+    <div class="menu">
+      <button (click)="onClick()">Add Expense</button>
+      <a>Display Expense</a>
+      <a>Monthly Expenses</a>
+    </div>
+    <div [hidden]="showExpense" class="expense">
+      <h2>Expenses Dashboard</h2>
+      <app-add-expense></app-add-expense>
+    </div>
   </div>
-
   <div class="footer"><h2>By Dwaki</h2></div>
-</html>
+</body>
